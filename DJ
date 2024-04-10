@@ -4,44 +4,39 @@ public class ReajusteSalario {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Solicita o salário atual do colaborador
+   
         System.out.print("Digite o salário atual do colaborador: ");
         double salario = scanner.nextDouble();
 
-        // Define os limites de cada faixa salarial
         double limite1 = 280;
         double limite2 = 700;
         double limite3 = 1500;
 
-        // Calcula o reajuste baseado nos critérios fornecidos
+      
         double percentualAumento;
         double aumento;
         if (salario <= limite1) {
             percentualAumento = 20;
             aumento = salario * 0.20; // 20% de aumento
+System.out.println("Percentual de aumento aplicado: " + percentualAumento + "%");
         } else if (salario <= limite2) {
             percentualAumento = 15;
             aumento = salario * 0.15; // 15% de aumento
+System.out.println("Percentual de aumento aplicado: " + percentualAumento + "%");
         } else if (salario <= limite3) {
             percentualAumento = 10;
             aumento = salario * 0.10; // 10% de aumento
+System.out.println("Percentual de aumento aplicado: " + percentualAumento + "%");
         } else {
             percentualAumento = 5;
             aumento = salario * 0.05; // 5% de aumento
+System.out.println("Percentual de aumento aplicado: " + percentualAumento + "%");
         }
-
-        // Calcula o novo salário com o reajuste
         double novoSalario = salario + aumento;
-
-        // Calcula o valor do aumento real descontando a inflação de 3,8%
+System.out.println("Novo salário após o aumento: R$" + novoSalario);
+       
         double aumentoReal = aumento * (1 - 0.038);
-
-        // Exibe os resultados na tela
-        System.out.println("Salário antes do reajuste: R$" + salario);
-        System.out.println("Percentual de aumento aplicado: " + percentualAumento + "%");
-        System.out.println("Valor do aumento: R$" + aumento);
-        System.out.println("Novo salário após o aumento: R$" + novoSalario);
-        System.out.println("Valor do aumento real descontado a inflação: R$" + aumentoReal);
+ System.out.println("Valor do aumento real descontado a inflação: R$" + aumentoReal);
 
         scanner.close();
     }
